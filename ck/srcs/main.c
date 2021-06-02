@@ -54,7 +54,7 @@ int	get_operations(t_list **a, t_list **b)
 			lst_clear(b);
 			free(line);
 			free(file);
-			write(STDERR_FILENO, "1Error\n", 7);
+			write(STDERR_FILENO, "Error\n", 6);
 			return (0);
 		}
 		free(line);

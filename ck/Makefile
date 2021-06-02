@@ -32,7 +32,7 @@ OBJS			=	$(SRCS_BASENAME:.c=.o)
 
 CC					=	clang
 
-FLAGS				=	-Wall -Werror -Wextra -fsanitize=address
+FLAGS				=	-Wall -Werror -Wextra
 
 .c.o		:
 			$(CC) -c $< -o $(<:.c=.o) $(FLAGS)
