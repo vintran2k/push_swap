@@ -5,37 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vintran <vintran@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/31 18:09:35 by vintran           #+#    #+#              #
-#    Updated: 2021/05/31 18:13:27 by vintran          ###   ########.fr        #
+#    Created: 2021/05/31 18:09:02 by vintran           #+#    #+#              #
+#    Updated: 2021/06/09 16:56:42 by vintran          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	push_swap
+NAME			=	checker
 SRCS_DIR		=	./srcs/
-SRCS			=	main.c			\
-					ft_list.c		\
-					ft_list2.c		\
-					parsing.c		\
-					is_char.c		\
-					ft_split.c		\
-					manage_tab.c	\
-					op_push.c		\
-					op_swap.c		\
-					op_rotate.c		\
-					op_rrotate.c	\
-					sort_three.c	\
-					sort_five.c		\
-					get_values.c	\
-					chunk.c			\
-					ft_rooftop.c	\
-					swap_to.c		\
-					get_pos.c		\
-					algo.c			\
-					backtrack.c		\
-					utils.c
-SRCS_BASENAME	=	$(addprefix $(SRCS_DIR), $(SRCS))
+SRCS			=	main.c					\
+					parsing.c				\
+					get_next_line.c			\
+					get_next_line_utils.c$(BONUS_NAME)
+
+PS_SRCS_DIR		=	../srcs/
+
+SRCS_BASENAME	=	$(addprefix $(SRCS_DIR), $(SRCS))			\
+					$(addprefix $(PS_SRCS_DIR), op_push.c)		\
+					$(addprefix $(PS_SRCS_DIR), op_rotate.c)	\
+					$(addprefix $(PS_SRCS_DIR), op_rrotate.c)	\
+					$(addprefix $(PS_SRCS_DIR), op_swap.c)		\
+					$(addprefix $(PS_SRCS_DIR), ft_list.c)		\
+					$(addprefix $(PS_SRCS_DIR), ft_split.c)		\
+					$(addprefix $(PS_SRCS_DIR), utils.c)		\
+					$(addprefix $(PS_SRCS_DIR), is_char.c)
 OBJS			=	$(SRCS_BASENAME:.c=.o)
+
 CC					=	clang
+
 FLAGS				=	-Wall -Werror -Wextra
 
 .c.o		:

@@ -3,36 +3,66 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: erlajoua <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: vintran <vintran@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/07 18:52:30 by erlajoua          #+#    #+#              #
-#    Updated: 2021/03/23 17:26:55 by erlajoua         ###   ########.fr        #
+#    Created: 2021/06/07 18:48:02 by vintran           #+#    #+#              #
+#    Updated: 2021/06/09 16:57:17 by vintran          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PS_NAME				=	push_swap
-CK_NAME				=	checker
-PS_DIR				=	./ps/
-CK_DIR				=	./ck/
+NAME				=	push_swap
+BONUS_NAME			=	checker
+BONUS_DIR			=	./bonus/
+SRCS_DIR			=	./srcs/
+SRCS				=	main.c				\
+						algo.c				\
+						best_chunk.c		\
+						chunk.c				\
+						ft_list2.c			\
+						ft_list.c			\
+						ft_rooftop.c		\
+						ft_split.c			\
+						get_pos.c			\
+						get_values.c		\
+						is_char.c			\
+						manage_tab.c		\
+						op_push.c			\
+						op_rotate.c			\
+						op_rrotate.c		\
+						op_swap.c			\
+						parsing.c			\
+						sort_five.c			\
+						sort_three.c		\
+						swap_to.c			\
+						utils.c
+SRCS_BASENAME		=	$(addprefix $(SRCS_DIR), $(SRCS))
+OBJS				=	$(SRCS_BASENAME:.c=.o)
+CC					=	clang
+FLAGS				=	-Wall -Werror -Wextra
 
-all			:	$(PS_NAME) $(CK_NAME)
+.c.o			:
+				$(CC) -c $< -o $(<:.c=.o) $(FLAGS)
 
-$(PS_NAME)	:
-			make -C $(PS_DIR)
-			mv $(PS_DIR)$(PS_NAME) ./
+all				:	$(NAME)
 
-$(CK_NAME)	:
-			make -C $(CK_DIR)
-			mv $(CK_DIR)$(CK_NAME) ./
+bonus			:	$(BONUS_NAME)
 
-clean		:
-			make clean -C $(PS_DIR)
-			make clean -C $(CK_DIR)
+$(NAME)			:	$(OBJS)
+				$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+				@echo [$(NAME)] : Created !
 
-fclean		:	clean
-			rm -f $(PS_NAME)
-			rm -f $(CK_NAME)
+$(BONUS_NAME)	:
+				make -C $(BONUS_DIR)
+				mv $(BONUS_DIR)$(BONUS_NAME) ./
 
-re			:	fclean all
+clean			:
+				rm -f $(OBJS)
+				make clean -C $(BONUS_DIR)
+
+fclean			:	clean
+				rm -f $(NAME)
+				rm -f $(BONUS_NAME)
+
+re				:	fclean all
 
 .PHONY: 		clean fclean all re
