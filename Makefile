@@ -6,7 +6,7 @@
 #    By: vintran <vintran@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/07 18:48:02 by vintran           #+#    #+#              #
-#    Updated: 2021/06/09 16:57:17 by vintran          ###   ########.fr        #
+#    Updated: 2021/06/10 17:12:37 by vintran          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ FLAGS				=	-Wall -Werror -Wextra
 
 all				:	$(NAME)
 
-bonus			:	$(BONUS_NAME)
+bonus			:	$(NAME) $(BONUS_NAME)
 
 $(NAME)			:	$(OBJS)
 				$(CC) $(OBJS) $(FLAGS) -o $(NAME)

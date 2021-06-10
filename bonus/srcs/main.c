@@ -6,7 +6,7 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:07:22 by vintran           #+#    #+#             */
-/*   Updated: 2021/06/02 15:55:46 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:39:46 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ int	exec_ope(char *line, t_list **a, t_list **b)
 int	get_operations(t_list **a, t_list **b)
 {
 	char	*line;
-	char	*file = NULL;
+	char	*file;
+
+	file = NULL;
 	while (get_next_line(0, &line, &file))
 	{
 		if (!(exec_ope(line, a, b)))

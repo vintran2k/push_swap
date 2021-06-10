@@ -6,7 +6,7 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:48:05 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:48:07 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 16:53:40 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ char	*ft_strcpyt(char *str, char c)
 	return (dest);
 }
 
-int		cw(char *str, char c)
+int	cw(char *str, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*str)
@@ -62,7 +62,8 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	str = (char *)s;
 	i = 0;
-	if (!(dest = (char **)malloc(sizeof(char *) * (cw(str, c) + 1))))
+	dest = malloc(sizeof(char *) * (cw(str, c) + 1));
+	if (!dest)
 		return (NULL);
 	while (*str)
 	{

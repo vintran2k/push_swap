@@ -6,7 +6,7 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:40:30 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:40:41 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 16:43:25 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	init_loop(t_algo *algo)
 	algo->rrr = 0;
 }
 
-int		algo(t_list **a, t_list **b, t_size *mysize, int display)
+int	algo(t_list **a, t_list **b, t_size *mysize, int display)
 {
 	t_algo	algo;
 
@@ -67,7 +67,7 @@ int		algo(t_list **a, t_list **b, t_size *mysize, int display)
 			else
 				ft_rooftop(a, &algo);
 			algo.ret += 1 + algo.ra + algo.rb + algo.rra
-			+ algo.rrb + algo.rr + algo.rrr;
+				+ algo.rrb + algo.rr + algo.rrr;
 			apply_rotates(a, b, &algo);
 		}
 		algo.ret += swap_to_a(a, b, &algo);

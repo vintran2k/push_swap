@@ -6,16 +6,16 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:43:10 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:43:19 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 16:45:34 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		is_in_chunk(t_algo algo, int value)
+int	is_in_chunk(t_algo algo, int value)
 {
-	int i;
-	int max;
+	int	i;
+	int	max;
 
 	i = (algo.current - 1) * algo.chunk_size;
 	max = i + algo.chunk_size;
@@ -51,7 +51,7 @@ void	get_chunk(t_list **a, t_algo *algo)
 
 void	find_loop(t_list *tmp, t_algo *algo)
 {
-	int i;
+	int	i;
 
 	i = algo->a_len - 1;
 	while (tmp->next)
@@ -69,7 +69,7 @@ void	find_loop(t_list *tmp, t_algo *algo)
 	}
 }
 
-int		find_hold(t_list **a, t_algo *algo)
+int	find_hold(t_list **a, t_algo *algo)
 {
 	t_list	*tmp;
 	int		i;

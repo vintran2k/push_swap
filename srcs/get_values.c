@@ -6,13 +6,13 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:49:18 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:49:27 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:07:20 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		min(int a, int b)
+int	min(int a, int b)
 {
 	if (a <= b)
 		return (a);
@@ -22,8 +22,8 @@ int		min(int a, int b)
 
 void	mov_sup(int movs, t_list **b, t_algo *algo)
 {
-	int common;
-	int pos;
+	int	common;
+	int	pos;
 
 	pos = get_pos(b, algo->h_first);
 	if (pos == -1)
@@ -48,8 +48,8 @@ void	mov_sup(int movs, t_list **b, t_algo *algo)
 
 void	mov_inf(int movs, t_list **b, t_algo *algo)
 {
-	int common;
-	int pos;
+	int	common;
+	int	pos;
 
 	movs = -movs;
 	pos = get_pos(b, algo->h_second);
@@ -76,7 +76,7 @@ void	mov_inf(int movs, t_list **b, t_algo *algo)
 
 void	get_values(t_list **b, t_algo *algo)
 {
-	int movs;
+	int	movs;
 
 	movs = get_movs(algo);
 	if (movs >= 0)

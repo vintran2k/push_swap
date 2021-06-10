@@ -6,23 +6,20 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:05:54 by vintran           #+#    #+#             */
-/*   Updated: 2021/06/02 15:49:52 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:37:58 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/get_next_line.h"
 
-char	*join_buf(char *s1, char *s2)
+char	*join_loop(char *s1, char *s2, int reslen)
 {
-	char	*res;
-	int		reslen;
 	int		i;
 	int		j;
+	char	*res;
 
-	if (!s1 && !s2)
-		return (NULL);
-	reslen = ft_sstrlen(s1) + ft_sstrlen(s2) + 1;
-	if (!(res = malloc(reslen)))
+	res = malloc(reslen);
+	if (!res)
 		return (NULL);
 	i = 0;
 	while (s1 && s1[i])
@@ -37,6 +34,20 @@ char	*join_buf(char *s1, char *s2)
 		j++;
 	}
 	res[i + j] = '\0';
+	return (res);
+}
+
+char	*join_buf(char *s1, char *s2)
+{
+	char	*res;
+	int		reslen;
+
+	if (!s1 && !s2)
+		return (NULL);
+	reslen = ft_sstrlen(s1) + ft_sstrlen(s2) + 1;
+	res = join_loop(s1, s2, reslen);
+	if (!res)
+		return (NULL);
 	free(s1);
 	return (res);
 }
@@ -47,7 +58,8 @@ char	*maj_file(char *file, int newline)
 	int		restlen;
 
 	restlen = ft_sstrlen(file + newline);
-	if (!(res = ft_strndup(file + newline, restlen)))
+	res = ft_strndup(file + newline, restlen);
+	if (!res)
 		return (NULL);
 	free(file);
 	return (res);
@@ -61,16 +73,18 @@ char	*get_line(char **file)
 	i = 0;
 	while ((*file)[i] && (*file)[i] != '\n')
 		i++;
-	if (!(res = ft_strndup(*file, i)))
+	res = ft_strndup(*file, i);
+	if (!res)
 		return (NULL);
 	if ((*file)[i] != '\n')
 		i--;
-	if (!(*file = maj_file(*file, i + 1)))
+	*file = maj_file(*file, i + 1);
+	if (!(*file))
 		return (NULL);
 	return (res);
 }
 
-int		get_next_line(int fd, char **line, char **file)
+int	get_next_line(int fd, char **line, char **file)
 {
 	int			ret;
 	char		buf[BUFFER_SIZE + 1];
@@ -80,13 +94,16 @@ int		get_next_line(int fd, char **line, char **file)
 	ret = 1;
 	while (ret && !is_newline(*file))
 	{
-		if ((ret = read(fd, buf, BUFFER_SIZE)) == -1)
+		ret = read(fd, buf, BUFFER_SIZE);
+		if (ret == -1)
 			return (-1);
 		buf[ret] = '\0';
-		if (!(*file = join_buf(*file, buf)))
+		*file = join_buf(*file, buf);
+		if (!(*file))
 			return (-1);
 	}
-	if (!(*line = get_line(file)))
+	*line = get_line(file);
+	if (!(*line))
 		return (-1);
 	if (ret == 0)
 	{

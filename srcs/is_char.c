@@ -6,15 +6,15 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:49:41 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:49:52 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:07:49 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		is_space(char *str)
+int	is_space(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -26,9 +26,9 @@ int		is_space(char *str)
 	return (0);
 }
 
-int		check_arg(char *av)
+int	check_arg(char *av)
 {
-	long n;
+	long	n;
 
 	n = long_atoi(av);
 	if (n < -2147483648 || n > 2147483647)
@@ -42,7 +42,7 @@ int		check_arg(char *av)
 	return (1);
 }
 
-int		check_duplicate(t_list **a, int data)
+int	check_duplicate(t_list **a, int data)
 {
 	t_list	*tmp;
 
@@ -56,7 +56,7 @@ int		check_duplicate(t_list **a, int data)
 	return (1);
 }
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

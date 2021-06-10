@@ -6,16 +6,16 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:53:34 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:53:43 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:09:26 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		find_index_min(int *tab, int len)
+int	find_index_min(int *tab, int len)
 {
-	int i;
-	int min[2];
+	int	i;
+	int	min[2];
 
 	min[0] = 0;
 	min[1] = tab[0];
@@ -34,7 +34,7 @@ int		find_index_min(int *tab, int len)
 
 void	apply_five(t_list **a, int pos)
 {
-	int a_len;
+	int	a_len;
 
 	a_len = list_len(a);
 	if (pos > (a_len / 2))
@@ -49,7 +49,7 @@ void	apply_five(t_list **a, int pos)
 
 void	sort_five(t_list **a, t_list **b)
 {
-	int pos;
+	int	pos;
 
 	pb(a, b, SHOW);
 	if (list_len(a) == 4)

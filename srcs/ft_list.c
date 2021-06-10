@@ -6,7 +6,7 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:46:10 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:46:18 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 16:47:31 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	lst_clear(t_list **lst)
 
 void	remove_top(t_list **lst)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = (*lst)->next;
 	free(*lst);
@@ -39,7 +39,7 @@ void	remove_top(t_list **lst)
 
 t_list	*init_list(int data)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = malloc(sizeof(t_list));
 	if (!new)

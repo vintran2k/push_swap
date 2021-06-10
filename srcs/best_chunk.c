@@ -6,7 +6,7 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 16:23:08 by vintran           #+#    #+#             */
-/*   Updated: 2021/06/09 16:23:11 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 16:44:06 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*lstcpy(t_list **lst)
 {
-	t_list *cp;
-	t_list *tmp;
+	t_list	*cp;
+	t_list	*tmp;
 
 	cp = NULL;
 	tmp = *lst;
@@ -35,9 +35,9 @@ void	init_check(t_check *ch)
 	ch->save = 0;
 }
 
-int		check_all(t_list **a, t_list **b, int size)
+int	check_all(t_list **a, t_list **b, int size)
 {
-	t_check ch;
+	t_check	ch;
 
 	init_check(&ch);
 	while (ch.i <= 30)

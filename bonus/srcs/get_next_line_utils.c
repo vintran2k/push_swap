@@ -6,15 +6,15 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:06:47 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 18:41:25 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:39:00 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/get_next_line.h"
 
-int		ft_sstrlen(char *str)
+int	ft_sstrlen(char *str)
 {
-	int i;
+	int	i;
 
 	if (!str)
 		return (0);
@@ -24,7 +24,7 @@ int		ft_sstrlen(char *str)
 	return (i);
 }
 
-int		is_newline(char *s)
+int	is_newline(char *s)
 {
 	if (!s)
 		return (0);
@@ -46,7 +46,8 @@ char	*ft_strndup(char *src, int n)
 	srclen = ft_sstrlen(src);
 	if (n > srclen)
 		n = srclen;
-	if (!(dst = malloc(n + 1)))
+	dst = malloc(n + 1);
+	if (!dst)
 		return (NULL);
 	i = 0;
 	while (i < n)

@@ -6,16 +6,16 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:46:32 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:46:45 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 16:48:22 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		*sort_list(t_list **lst, int size)
+int	*sort_list(t_list **lst, int size)
 {
-	int *tab;
-	int i;
+	int	*tab;
+	int	i;
 
 	tab = list_to_tab(lst);
 	i = 0;
@@ -31,7 +31,7 @@ int		*sort_list(t_list **lst, int size)
 	return (tab);
 }
 
-int		list_len(t_list **lst)
+int	list_len(t_list **lst)
 {
 	int		i;
 	t_list	*tmp;

@@ -6,13 +6,13 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:53:13 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:53:22 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:09:03 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		is_sorted(t_list **a)
+int	is_sorted(t_list **a)
 {
 	t_list	*tmp;
 
@@ -26,7 +26,7 @@ int		is_sorted(t_list **a)
 	return (1);
 }
 
-int		parse_arg(char *str, t_list **a)
+int	parse_arg(char *str, t_list **a)
 {
 	char	**strs;
 	int		i;
@@ -54,13 +54,13 @@ int		parse_arg(char *str, t_list **a)
 	return (flag);
 }
 
-int		parsing_error(void)
+int	parsing_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	return (0);
 }
 
-int		parsing(int ac, char **av, t_list **a, t_list **b)
+int	parsing(int ac, char **av, t_list **a, t_list **b)
 {
 	int		i;
 	t_size	mysize;

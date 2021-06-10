@@ -6,16 +6,16 @@
 /*   By: vintran <vintran@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 17:50:26 by vintran           #+#    #+#             */
-/*   Updated: 2021/05/31 17:50:34 by vintran          ###   ########.fr       */
+/*   Updated: 2021/06/10 17:08:19 by vintran          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int		find_min(int *tab, int len)
+int	find_min(int *tab, int len)
 {
-	int i;
-	int min;
+	int	i;
+	int	min;
 
 	min = 2147483647;
 	i = 0;
@@ -28,7 +28,7 @@ int		find_min(int *tab, int len)
 	return (min);
 }
 
-int		*list_to_tab(t_list **lst)
+int	*list_to_tab(t_list **lst)
 {
 	int		*tab;
 	int		len;
